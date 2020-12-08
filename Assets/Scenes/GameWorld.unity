@@ -528,6 +528,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 165313f9dae300447b33c25b707e4e5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minInterval: 0
+  maxInterval: 3
+  spawnDistanceFromPlayer: 3
+  player: {fileID: 963194225}
+  GunPrefab: {fileID: 8442605323827671885, guid: fced8bc17a59be14390a45299ed1419c, type: 3}
 --- !u!4 &1418581725
 Transform:
   m_ObjectHideFlags: 0
@@ -564,15 +569,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8905424611774596086, guid: 0b9de56506765d04998d9170d07d451d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.3636389
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8905424611774596086, guid: 0b9de56506765d04998d9170d07d451d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.384
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8905424611774596086, guid: 0b9de56506765d04998d9170d07d451d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.838605
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8905424611774596086, guid: 0b9de56506765d04998d9170d07d451d, type: 3}
       propertyPath: m_LocalRotation.w

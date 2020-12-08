@@ -45,9 +45,6 @@ public class GunLogic : MonoBehaviour
 
     private void FireGun()
     {
-        Debug.Log("Position: " + BulletSpawn.transform.position);
-        Debug.Log("Rotation: " + this.transform.rotation);
         Instantiate(BulletPrefab, BulletSpawn.transform.position, this.transform.rotation);
-        Debug.Log("Fired Gun!");
     }
 }
