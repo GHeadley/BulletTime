@@ -146,7 +146,7 @@ MonoBehaviour:
   Player: {fileID: 0}
   BulletPrefab: {fileID: 7363908208580528037, guid: 0b9de56506765d04998d9170d07d451d, type: 3}
   BulletSpawn: {fileID: 8669984033112084945}
-  AimDuration: 4
+  AimWindupDuration: 4
 --- !u!1 &8442605324910937455
 GameObject:
   m_ObjectHideFlags: 0
