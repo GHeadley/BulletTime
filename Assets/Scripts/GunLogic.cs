@@ -7,17 +7,17 @@ public class GunLogic : MonoBehaviour
     public GameObject Player;
     public GameObject BulletPrefab;
     public GameObject BulletSpawn;
-    public float AimDuration;
+    public float AimWindupDuration;
 
     private float currDuration = 0;
     private Vector3 playerLocation;
     private Vector3 startGunLocation;
 
-    public GunLogic(GameObject player, GameObject bulletPrefab, float aimDuration, GameObject bulletSpawn)
+    public GunLogic(GameObject player, GameObject bulletPrefab, float aimWindupDuration, GameObject bulletSpawn)
     {
         this.Player = player;
         this.BulletPrefab = bulletPrefab;
-        this.AimDuration = aimDuration;
+        this.AimWindupDuration = aimWindupDuration;
         this.BulletSpawn = bulletSpawn;
     }
 
@@ -32,12 +32,12 @@ public class GunLogic : MonoBehaviour
     void Update()
     {
         currDuration += Time.deltaTime;
-        if(currDuration >= AimDuration)
+        if(currDuration >= AimWindupDuration)
         {
             FireGun();
             Destroy(this.gameObject);
         }
-        float currY = Mathf.Lerp(startGunLocation.y, playerLocation.y, currDuration / AimDuration);
+        float currY = Mathf.Lerp(startGunLocation.y, playerLocation.y, currDuration / AimWindupDuration);
         Vector3 newLocation = new Vector3(startGunLocation.x, currY, startGunLocation.z);
         this.transform.position = newLocation;
         this.transform.LookAt(Player.transform, Vector3.up);
