@@ -5,8 +5,8 @@ using UnityEngine;
 public class BulletLogic : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float Speed = 1;
-    public float TTL = 30;
+    public float Speed;
+    public float TTL;
 
     private Vector3 direction;
 
