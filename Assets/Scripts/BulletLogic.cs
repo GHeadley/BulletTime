@@ -12,13 +12,13 @@ public class BulletLogic : MonoBehaviour
 
     void Start()
     {
-        //direction = Vector3.forward;
-        Destroy(this.gameObject, TTL);       
+        Destroy(this.gameObject, TTL);
+        Debug.Log(this.transform.forward);
     }
 
     // Update is called once per frame
     void Update()
     {
-        this.transform.Translate(-this.transform.forward * Time.deltaTime * Speed);
+        this.transform.Translate(Vector3.forward * Time.deltaTime * Speed);
     }
 }
