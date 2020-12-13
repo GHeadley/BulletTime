@@ -8,21 +8,57 @@ namespace Tests
 {
     public class GameManagerTests
     {
-        // A Test behaves as an ordinary method
         [Test]
-        public void GameManagerTestsSimplePasses()
+        public void Given_ArbitraryGameManager_minIntervalIsZero()
         {
-            // Use the Assert class to test conditions
+            // Given
+            var gameObject = new GameObject();
+
+            // When
+            var managerComponent = gameObject.AddComponent<GameManager>();
+
+            // Then
+            Assert.AreEqual(managerComponent.minInterval, 0.0f);
         }
 
-        // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-        // `yield return null;` to skip a frame.
-        [UnityTest]
-        public IEnumerator GameManagerTestsWithEnumeratorPasses()
+        [Test]
+        public void Given_ArbitraryGameManager_maxIntervalIsZero()
         {
-            // Use the Assert class to test conditions.
-            // Use yield to skip a frame.
-            yield return null;
+            // Given
+            var gameObject = new GameObject();
+
+            // When
+            var managerComponent = gameObject.AddComponent<GameManager>();
+
+            // Then
+            Assert.AreEqual(managerComponent.maxInterval, 0.0f);
+        }
+
+        [Test]
+        public void Given_ArbitraryGameManager_spawnDistanceFromPlayerIsZero()
+        {
+            // Given
+            var gameObject = new GameObject();
+
+            // When
+            var managerComponent = gameObject.AddComponent<GameManager>();
+
+            // Then
+            Assert.AreEqual(managerComponent.spawnDistanceFromPlayer, 0.0f);
+        }
+
+        [Test]
+        public void Given_ArbitraryGameManager_GetRandomSpawnVectorIsValid()
+        {
+            // Given
+            var gameObject = new GameObject();
+            var managerComponent = gameObject.AddComponent<GameManager>();
+
+            // When
+            Vector3 result = managerComponent.GetRandomSpawnVector();
+
+            // Then
+            Assert.IsNotNull(result);
         }
     }
 }

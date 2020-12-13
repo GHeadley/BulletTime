@@ -8,21 +8,38 @@ namespace Tests
 {
     public class GunLogicTests
     {
-        // A Test behaves as an ordinary method
         [Test]
-        public void GunLogicTestsSimplePasses()
+        public void Given_ArbitraryGunLogicComponent_AimWindupDurationIs0()
         {
-            // Use the Assert class to test conditions
+            // Given
+            var gameObject = new GameObject();
+
+            // When
+            var gunComponent = gameObject.AddComponent<GunLogic>();
+
+            // Then
+            Assert.AreEqual(gunComponent.AimWindupDuration, 0.0f);
         }
 
-        // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-        // `yield return null;` to skip a frame.
         [UnityTest]
-        public IEnumerator GunLogicTestsWithEnumeratorPasses()
+        public IEnumerator Given_ArbitraryAimWindupDuration_WillDestroyAfterDuration()
         {
-            // Use the Assert class to test conditions.
-            // Use yield to skip a frame.
-            yield return null;
+            // Given
+            var gun = new GameObject();
+            var arbitraryObject = new GameObject();
+            var gunLogicComponenet = gun.AddComponent<GunLogic>();
+            var ArbitraryAimWindupDuration = 0.5f;
+
+            gunLogicComponenet.Player = arbitraryObject;
+            gunLogicComponenet.BulletPrefab = arbitraryObject;
+            gunLogicComponenet.BulletSpawn = arbitraryObject;
+            gunLogicComponenet.AimWindupDuration = ArbitraryAimWindupDuration;
+
+            // When
+            yield return new WaitForSeconds(ArbitraryAimWindupDuration);
+
+            // Then
+            Assert.IsTrue(gun == null);
         }
     }
 }

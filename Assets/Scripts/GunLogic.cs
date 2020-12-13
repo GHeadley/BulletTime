@@ -13,14 +13,6 @@ public class GunLogic : MonoBehaviour
     private Vector3 playerLocation;
     private Vector3 startGunLocation;
 
-    public GunLogic(GameObject player, GameObject bulletPrefab, float aimWindupDuration, GameObject bulletSpawn)
-    {
-        this.Player = player;
-        this.BulletPrefab = bulletPrefab;
-        this.AimWindupDuration = aimWindupDuration;
-        this.BulletSpawn = bulletSpawn;
-    }
-
     // Start is called before the first frame update
     void Start()
     {

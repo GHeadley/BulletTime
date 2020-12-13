@@ -8,21 +8,16 @@ namespace Tests
 {
     public class PlayerLogicTests
     {
-        // A Test behaves as an ordinary method
-        [Test]
-        public void PlayerLogicTestsSimplePasses()
+        public void Given_ArbitraryPlayerLogicComponent_SpeedIsZero()
         {
-            // Use the Assert class to test conditions
-        }
+            // Given
+            var player = new GameObject();
 
-        // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-        // `yield return null;` to skip a frame.
-        [UnityTest]
-        public IEnumerator PlayerLogicTestsWithEnumeratorPasses()
-        {
-            // Use the Assert class to test conditions.
-            // Use yield to skip a frame.
-            yield return null;
+            // When
+            var playerComponent = player.AddComponent<PlayerLogic>();
+
+            // Then
+            Assert.AreEqual(playerComponent.PlayerHealth, 0.0f);
         }
     }
 }
