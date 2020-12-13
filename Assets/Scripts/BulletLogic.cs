@@ -26,7 +26,6 @@ public class BulletLogic : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("test");
         Destroy(gameObject);
     }
 }

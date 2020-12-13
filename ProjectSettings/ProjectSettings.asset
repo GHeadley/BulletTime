@@ -127,9 +127,7 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleVersion: 0.1
-  preloadedAssets:
-  - {fileID: 8281085656157253263, guid: 17c475726390a6e4b9f6d8ad931e5dc4, type: 2}
-  - {fileID: -9007855232158787715, guid: 9e8452b6504969e428decd2775610ec5, type: 2}
+  preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -602,7 +600,7 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: BulletTime
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: D:\Unity\BulletTime\Assets\WSATestCertificate.pfx
+  metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
   metroCertificateSubject: DefaultCompany
   metroCertificateIssuer: DefaultCompany
@@ -630,9 +628,9 @@ PlayerSettings:
       Bluetooth: False
       MusicLibrary: False
       AllJoyn: False
-      PrivateNetworkClientServer: False
+      PrivateNetworkClientServer: True
       LowLevelDevices: False
-      InternetClientServer: False
+      InternetClientServer: True
       OfflineMapsManagement: False
       Objects3D: False
       InternetClient: True
