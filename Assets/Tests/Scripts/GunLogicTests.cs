@@ -36,7 +36,7 @@ namespace Tests
             gunLogicComponenet.AimWindupDuration = ArbitraryAimWindupDuration;
 
             // When
-            yield return new WaitForSeconds(ArbitraryAimWindupDuration);
+            yield return new WaitForSeconds(ArbitraryAimWindupDuration + 0.1f);
 
             // Then
             Assert.IsTrue(gun == null);

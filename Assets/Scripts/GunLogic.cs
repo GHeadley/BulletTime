@@ -37,6 +37,11 @@ public class GunLogic : MonoBehaviour
 
     private void FireGun()
     {
-        Instantiate(BulletPrefab, BulletSpawn.transform.position, this.transform.rotation);
+        var spawnedBullet = Instantiate(BulletPrefab, BulletSpawn.transform.position, BulletPrefab.transform.rotation);
+        // TODO: Find better way of passing in direction vector, via injection?
+        var bulletLogicComponent = spawnedBullet.GetComponent<BulletLogic>();
+        bulletLogicComponent.direction = Vector3.Normalize(Player.transform.position - BulletSpawn.transform.position);
+        spawnedBullet.transform.LookAt(Player.transform, Vector3.up);
+        spawnedBullet.transform.Rotate(new Vector3(90, 90, 90), Space.Self);
     }
 }

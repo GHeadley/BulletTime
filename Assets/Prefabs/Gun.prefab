@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  BulletPrefab: {fileID: 7363908208580528037, guid: 0b9de56506765d04998d9170d07d451d, type: 3}
+  BulletPrefab: {fileID: 8693427286862980666, guid: 3c66c6ab1837c9f448421316cf2b2398, type: 3}
   BulletSpawn: {fileID: 8669984033112084945}
   AimWindupDuration: 4
 --- !u!1 &8442605324910937455

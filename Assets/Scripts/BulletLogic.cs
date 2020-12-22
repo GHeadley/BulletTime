@@ -8,24 +8,24 @@ public class BulletLogic : MonoBehaviour
     public float Speed;
     public float TTL;
 
-    private Vector3 direction;
-
-    private CapsuleCollider bulletCollider;
+    public Vector3 direction;
 
     void Start()
     {
-        bulletCollider = this.gameObject.GetComponentInChildren<CapsuleCollider>();
         Destroy(gameObject, TTL);
     }
 
     // Update is called once per frame
     void Update()
     {
-        this.transform.Translate(-transform.forward * Time.deltaTime * Speed);
+        this.transform.Translate((direction) * Time.deltaTime * Speed, Space.World);
     }
 
     void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
+        if(!this.CompareTag(other.tag))
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
