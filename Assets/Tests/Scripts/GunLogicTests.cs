@@ -26,17 +26,23 @@ namespace Tests
         {
             // Given
             var gun = new GameObject();
-            var arbitraryObject = new GameObject();
-            var gunLogicComponenet = gun.AddComponent<GunLogic>();
+            var arbitraryPlayer = new GameObject();
+            var arbitraryBulletPrefab = new GameObject();
+            var arbitraryBulletSpawn = new GameObject();
             var ArbitraryAimWindupDuration = 0.5f;
+            var ArbitraryBulletLogicTTL = 10.0f;
 
-            gunLogicComponenet.Player = arbitraryObject;
-            gunLogicComponenet.BulletPrefab = arbitraryObject;
-            gunLogicComponenet.BulletSpawn = arbitraryObject;
+            var bulletLogicCompontent = arbitraryBulletPrefab.AddComponent<BulletLogic>();
+            bulletLogicCompontent.TTL = ArbitraryBulletLogicTTL;
+
+            var gunLogicComponenet = gun.AddComponent<GunLogic>();
+            gunLogicComponenet.Player = arbitraryPlayer;
+            gunLogicComponenet.BulletPrefab = arbitraryBulletPrefab;
+            gunLogicComponenet.BulletSpawn = arbitraryBulletSpawn;
             gunLogicComponenet.AimWindupDuration = ArbitraryAimWindupDuration;
 
             // When
-            yield return new WaitForSeconds(ArbitraryAimWindupDuration + 0.1f);
+            yield return new WaitForSeconds(ArbitraryAimWindupDuration);
 
             // Then
             Assert.IsTrue(gun == null);

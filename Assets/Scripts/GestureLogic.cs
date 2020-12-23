@@ -7,13 +7,13 @@ public class GestureLogic : MonoBehaviour, IMixedRealityGestureHandler<Vector3>
 {
     public void OnGestureStarted(InputEventData eventData)
     {
-        Debug.Log($"OnGestureStarted [{Time.frameCount}]: {eventData.MixedRealityInputAction.Description}");
+        Debug.Log($"OnGestureStarted Input [{Time.frameCount}]: {eventData.MixedRealityInputAction.Description}");
         Destroy(this.gameObject);
     }
 
     public void OnGestureUpdated(InputEventData<Vector3> eventData)
     {
-        Debug.Log($"OnGestureUpdated [{Time.frameCount}]: {eventData.MixedRealityInputAction.Description}");
+        Debug.Log($"OnGestureUpdated Vector [{Time.frameCount}]: {eventData.MixedRealityInputAction.Description}");
         Destroy(this.gameObject);
     }
 
@@ -25,7 +25,7 @@ public class GestureLogic : MonoBehaviour, IMixedRealityGestureHandler<Vector3>
 
     public void OnGestureUpdated(InputEventData eventData)
     {
-        Debug.Log($"OnGestureUpdated [{Time.frameCount}]: {eventData.MixedRealityInputAction.Description}");
+        Debug.Log($"OnGestureUpdated Input [{Time.frameCount}]: {eventData.MixedRealityInputAction.Description}");
         Destroy(this.gameObject);
     }
 
@@ -37,7 +37,7 @@ public class GestureLogic : MonoBehaviour, IMixedRealityGestureHandler<Vector3>
 
     public void OnGestureCanceled(InputEventData eventData)
     {
-        Debug.Log($"OnGestureCanceled [{Time.frameCount}]: {eventData.MixedRealityInputAction.Description}");
+        Debug.Log($"OnGestureCanceled Input [{Time.frameCount}]: {eventData.MixedRealityInputAction.Description}");
         Destroy(this.gameObject);
     }
 }

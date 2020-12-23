@@ -28,11 +28,15 @@ public class GunLogic : MonoBehaviour
         {
             FireGun();
             Destroy(this.gameObject);
+            return;
+        } 
+        else
+        {
+            float currY = Mathf.Lerp(startGunLocation.y, playerLocation.y, currDuration / AimWindupDuration);
+            Vector3 newLocation = new Vector3(startGunLocation.x, currY, startGunLocation.z);
+            this.transform.position = newLocation;
+            this.transform.LookAt(Player.transform, Vector3.up);
         }
-        float currY = Mathf.Lerp(startGunLocation.y, playerLocation.y, currDuration / AimWindupDuration);
-        Vector3 newLocation = new Vector3(startGunLocation.x, currY, startGunLocation.z);
-        this.transform.position = newLocation;
-        this.transform.LookAt(Player.transform, Vector3.up);
     }
 
     private void FireGun()
@@ -40,7 +44,8 @@ public class GunLogic : MonoBehaviour
         var spawnedBullet = Instantiate(BulletPrefab, BulletSpawn.transform.position, BulletPrefab.transform.rotation);
         // TODO: Find better way of passing in direction vector, via injection?
         var bulletLogicComponent = spawnedBullet.GetComponent<BulletLogic>();
-        bulletLogicComponent.direction = Vector3.Normalize(Player.transform.position - BulletSpawn.transform.position);
+        bulletLogicComponent.direction = Vector3.Normalize(Player.transform.position 
+            - BulletSpawn.transform.position);
         spawnedBullet.transform.LookAt(Player.transform, Vector3.up);
         spawnedBullet.transform.Rotate(new Vector3(90, 90, 90), Space.Self);
     }

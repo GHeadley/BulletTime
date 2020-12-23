@@ -3,7 +3,9 @@
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "ScriptsAssembly"
+        "ScriptsAssembly",
+        "Microsoft.MixedReality.Toolkit.Services.InputSystem",
+        "Microsoft.MixedReality.Toolkit"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

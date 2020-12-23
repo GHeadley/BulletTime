@@ -41,6 +41,8 @@ namespace Tests
             // Given
             var bullet = new GameObject();
             var bulletComponent = bullet.AddComponent<BulletLogic>();
+            var arbitraryDirectionVector = new Vector3(1, 0, 0);
+            bulletComponent.direction = arbitraryDirectionVector;
             bulletComponent.Speed = 100;
             bulletComponent.TTL = 10;
             var originalPosition = bullet.transform.position;
@@ -58,9 +60,12 @@ namespace Tests
             // Given
             var bullet = new GameObject();
             var bulletComponent = bullet.AddComponent<BulletLogic>();
+            var arbitraryObject = new GameObject();
+            var sphereCollider = arbitraryObject.AddComponent<SphereCollider>();
+            arbitraryObject.tag = "Player";
 
             // When
-            bulletComponent.BroadcastMessage("OnTriggerEnter", new Collider());
+            bulletComponent.BroadcastMessage("OnTriggerEnter", sphereCollider);
             yield return new WaitForFixedUpdate();
 
             // Then
